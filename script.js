@@ -6,9 +6,11 @@ const randomNumber = Math.trunc(Math.random() * 20 + 1);
 document.querySelector('.number').textContent = randomNumber;
 
 document.querySelector('.check').addEventListener('click', function () {
-  let guess = document.querySelector('.guess').value;
+  let guess = Number(document.querySelector('.guess').value);
 
   if (!guess) {
     document.querySelector('.message').textContent = '⛔No Number Entered';
+  } else if (guess === randomNumber) {
+    document.querySelector('.message').textContent = '🎉 Correct Number';
   }
 });
