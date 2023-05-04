@@ -7,6 +7,7 @@ let randomNumber = Math.trunc(Math.random() * 20 + 1);
 
 //changing and setting score
 let score = 20;
+let highScore = 0;
 let changeScore = function () {
   if (score > 1) {
     score--;
@@ -14,6 +15,13 @@ let changeScore = function () {
   } else {
     document.querySelector('.message').textContent = 'Game Over 🥲';
     document.querySelector('.score').textContent = 0;
+  }
+};
+
+let setHighSCore = function () {
+  if (score > highScore) {
+    highScore = score;
+    document.querySelector('.highscore').textContent = highScore;
   }
 };
 
@@ -30,6 +38,7 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').textContent = randomNumber;
+    setHighSCore();
   }
   //when number is greater than the random number
   else if (guess > randomNumber) {
