@@ -12,5 +12,9 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = '⛔No Number Entered';
   } else if (guess === randomNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number';
+  } else if (guess > randomNumber) {
+    document.querySelector('.message').textContent = 'Too High!';
+  } else if (guess < randomNumber) {
+    document.querySelector('.message').textContent = 'Too Low!';
   }
 });
