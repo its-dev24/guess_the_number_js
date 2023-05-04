@@ -13,8 +13,8 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guess === randomNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number';
   } else if (guess > randomNumber) {
-    document.querySelector('.message').textContent = 'Too High!';
+    document.querySelector('.message').textContent = '📈 Too High!';
   } else if (guess < randomNumber) {
-    document.querySelector('.message').textContent = 'Too Low!';
+    document.querySelector('.message').textContent = '📉 Too Low!';
   }
 });
