@@ -8,8 +8,13 @@ document.querySelector('.number').textContent = randomNumber;
 let score = 20;
 
 let changeScore = function () {
-  score--;
-  document.querySelector('.score').textContent = score;
+  if (score > 1) {
+    score--;
+    document.querySelector('.score').textContent = score;
+  } else {
+    document.querySelector('.message').textContent = 'Game Over 🥲';
+    document.querySelector('.score').textContent = 0;
+  }
 };
 
 document.querySelector('.check').addEventListener('click', function () {
